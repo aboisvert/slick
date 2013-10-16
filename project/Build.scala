@@ -3,6 +3,7 @@ import Keys._
 import Tests._
 import com.typesafe.sbt.site.SphinxSupport.Sphinx
 import com.typesafe.sbt.SbtSite.site
+import foo._
 
 object SlickBuild extends Build {
 
@@ -10,7 +11,7 @@ object SlickBuild extends Build {
   val repoKind = SettingKey[String]("repo-kind", "Maven repository kind (\"snapshots\" or \"releases\")")
 
   val publishedScalaSettings = Seq(
-    scalaVersion := "2.10.1",
+    scalaVersion := "2.10.3",
     //scalaBinaryVersion <<= scalaVersion,
     //crossScalaVersions ++= "2.10.0-M4" :: Nil,
     libraryDependencies <+= scalaVersion("org.scala-lang" % "scala-compiler" % _ % "optional")
